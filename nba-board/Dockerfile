@@ -18,6 +18,7 @@ RUN echo "python3 /home/pi/NBA-scoreboard/Spreads_Update.py" >> /start.sh
 RUN echo "service cron start" >> /start.sh
 RUN echo "python3 /home/pi/NBA-scoreboard/NBA_Data.py & wait 5 & python3 /home/pi/NBA-scoreboard/NBA_Render.py" >> /start.sh
 RUN chmod +x /start.sh
+RUN apt-get clean && apt-get autoclean
 ENTRYPOINT "/start.sh"
 
 
